@@ -1,0 +1,11 @@
+.histogram-chart rect {
+  fill: #fe9922;
+}
+
+.histogram-title {
+  font-size: large;
+}
+
+.histogram-description {
+  font-size: small;
+}

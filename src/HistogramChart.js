@@ -21,6 +21,7 @@ class HistogramChart extends Component {
   }
 
   createHistogramChart() {
+    this.removeChildNodes()
     const node = select(this.node);
     const margin = {top: 30, right: 30, bottom: 45, left: 30};
     const g = node.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
@@ -76,7 +77,14 @@ class HistogramChart extends Component {
       .attr('y', height + 40)
       .attr('x', width / 2)
       .text('Total: ' + dataCount + ', In histogram: ' + dataCountInHistogram)
+  }
+
+  removeChildNodes() {
+    const { node } = this
+    while (node.firstChild) {
+      node.removeChild(node.firstChild)
     }
+  }
 
   render() {
     return <svg
